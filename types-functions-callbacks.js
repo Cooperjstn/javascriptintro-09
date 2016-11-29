@@ -10,17 +10,19 @@
 // Write a function called addOne() that returns the input number, plus one.
 
 console.assert(addOne(1) === 2)
-var addOne= function (number){
- return number + 1;
-}
+var addOne = function(num){
+	var answer = num + 1
+	return answer
 
+}
 // Part 0
 
 // Fix the following code so that the assertion passes.
 
 var doubleNum = function(num) {
- 	return num * 2;
-}
+  var newNum = num * 2;
+	return newNum;
+
 
 console.assert(doubleNum(5) === 10)
 
@@ -33,12 +35,14 @@ console.assert(doubleNum(5) === 10)
  */
 
 
+
+var sum= function (num1, num2){
+	var sumAdd= num1 + num2;
+  return sumAdd;
+}
 console.assert(sum(8, 11) === 19);
 console.assert(sum(4, 100) === 104);
 
-var sum= function (num1, num2){
-	return num1 + num2;
-}
 // PART 2
 
 // Write a function called average that takes two numbers
@@ -46,14 +50,12 @@ var sum= function (num1, num2){
 // repeating yourself, use your sum function inside
 // of your average function.
 
-
+var average= function (x, y){
+	var sumAvg = sum(x,y)/2;
+return sumAvg;
+}
 console.assert(average(8,12) === 10)
 console.assert(average(100,200) === 150)
-
-var average= function (x, y){
-	var sum = x + y;
-return sum/2;
-}
 
 /**
  * PART 3
@@ -62,52 +64,51 @@ return sum/2;
  inputs is not a number, it will return "null."
  */
 
+var sum= function (a,b) {if (typeof a ==='number' &&
+ b === 'number'){
+return a + b } else {
+  return null
+}
+};
+
 
 console.assert(sum(867, 5309) === 6176);
 console.assert(sum('867', 5309) === null);
 console.assert(sum(true, 5) === null);
-
-var sum= function (a,b) {if (a'number' || b'number')}
-{return object;}
-
 
 // Part 4
 
 // Write a function called isNegative that will tell
 // whether a number is negative or not.
 
-console.assert(isNegative(10) === false)
-console.assert(isNegative(0) === false)
-console.assert(isNegative(-999) === true)
-
 var isNegative = function (num) if(-x) {
     "This is true";
 }else {
     "This is false";
-}
+};
+
+console.assert(isNegative(10) === false)
+console.assert(isNegative(0) === false)
+console.assert(isNegative(-999) === true)
 
 // Now, modify your sum function again, so that it
 // will return null if any of the inputs is negative.
 // To avoid repeating yourself, use your isNegative
 // function inside your sum funciton ***
 
-console.assert(sum(5,-5) === null)
-
-var isNegative= function (num) if(-x) {
-    "This is true";
-} return === null;{}
-}
-
+// console.assert(sum(5,-5) === null)
+//
+// var isNegative= function (num) if(-x) {
+//     "This is true";
+// } return === null;{
+// }
+// console.assert(sum(5,-5) === null)
 // Part 5
 
 // Write a function that will find the minimum of four
 // input numbers. You can do it using nested if statements,
 // boolean operators, or both (but not neither).
 
-console.assert(minimum(1,2,4,0) === 0)
-console.assert(minimum(1000,-2,-99,50) === -99)
-console.assert(minimum(-1000,-2,-99,50) === -1000)
-console.assert(minimum(1000,-2,99,50) === -2)
 
 var minimum = function (num1, num2, num3, num4) {
 	return num1
@@ -119,6 +120,10 @@ var minimum = function (num1, num2, num3, num4) {
 	return num4
 }
 
+console.assert(minimum(1,2,4,0) === 0)
+console.assert(minimum(1000,-2,-99,50) === -99)
+console.assert(minimum(-1000,-2,-99,50) === -1000)
+console.assert(minimum(1000,-2,99,50) === -2)
 
 
 // Part 7
@@ -127,18 +132,20 @@ var minimum = function (num1, num2, num3, num4) {
 // return true if either input is a string, but not
 // both or neither.
 
+
+var justOneString= function (num,phr) {
+	if (typeof num==='string' && typeof phr==='string') {
+    return false
+  } else if (typeof num != 'string' && typeof phr != 'string'){
+	return false;
+}else{
+	return true;
+}
+}
 console.assert(justOneString('a',5) === true)
 console.assert(justOneString(6,'dotron') === true)
 console.assert(justOneString('peanut','butter') === false)
 console.assert(justOneString(8,null) === false)
-
-var justOneString= function (num,phr) {
-	if (num==='string' && phr==='number' || num=== 'string' && phr=== 'string')}
-	{return true;
-}else{
-	return false;
-}
-
 
 
 // Part 8
@@ -181,6 +188,13 @@ var doTwice= [[[x]]]
 // "YES." Otherwise, it will does nothing.
 
 var ORACLE = 'NO'
+var conditionallyInvoke = function(func){
+	if(ORACLE === 'YES'){
+		func();
+
+	}
+	else{}
+}
 
 conditionallyInvoke(doubleGlobalNumber)
 console.assert(NUMBER === 48)
@@ -192,7 +206,12 @@ console.assert(NUMBER === 96)
 // Part 10
 
 // Make the following assertion work:
-
+var factory = function(){
+	function world() {
+		return 'hello world';
+	}
+	return world
+}
 console.assert(factory()() === 'hello world')  // INCEPTION!
 
 
