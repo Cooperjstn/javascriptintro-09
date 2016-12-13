@@ -85,9 +85,9 @@ console.assert(sum(true, 5) === null);
 // Write a function called isNegative that will tell
 // whether a number is negative or not.
 
-var isNegative = function(negNum){
-	var negComp = negNum < 0;
-	return negComp;
+var isNegative = function(isNum){
+	var negAns = isNum < 0;
+	return negAns;
 };
 
 
